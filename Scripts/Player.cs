@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Player : Portable
+public class Player : DetectorTrigger
 {
     Rigidbody rb;
     public float speed;
@@ -17,10 +17,10 @@ public class Player : Portable
     void Update()
     {
         UpdateCamera();
-        rb.AddForce(speed * Time.deltaTime * (
+        rb.velocity = speed * Time.deltaTime * (
             rotorX.forward * Input.GetAxis("Vertical") +
             rotorX.right * Input.GetAxis("Horizontal")
-        ));
+            ) + new Vector3(0, rb.velocity.y);
     }
     void UpdateCamera()
     {

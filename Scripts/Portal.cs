@@ -2,16 +2,13 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class Portal : MonoBehaviour
+public class Portal : Zone
 {
     public Vector3 to, rotation;
-    private void OnCollisionEnter(Collision collision)
+    protected override void OnEnter(DetectorTrigger T)
     {
-        if (collision.gameObject.TryGetComponent(out Portable p))
-        {
-            Transform t = collision.transform;
-            t.position = to;
-            t.eulerAngles = rotation;
-        }
+        Transform t = T.transform;
+        t.position = to;
+        t.eulerAngles = rotation;
     }
 }

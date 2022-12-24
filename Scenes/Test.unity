@@ -465,7 +465,7 @@ MonoBehaviour:
   rotorX: {fileID: 1758800119}
   rotorY: {fileID: 1443257433}
   cam: {fileID: 963194228}
-  sensitivity: {x: -1, y: -1}
+  sensitivity: {x: 1, y: -1}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
