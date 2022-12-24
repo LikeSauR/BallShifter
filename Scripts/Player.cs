@@ -25,6 +25,6 @@ public class Player : MonoBehaviour
     {
         rotorX.position = Vector3.Lerp(rotorX.position, transform.position, 10f * Time.deltaTime);
         rotorX.eulerAngles += new Vector3(0, Input.GetAxis("Mouse X") * sensitivity.x);
-        //rotorY.localEulerAngles = new Vector3(rotorY.localEulerAngles + Input.GetAxis("Mouse Y") * sensitivity.x ,0);
+        rotorY.localEulerAngles = new Vector3(rotorY.localEulerAngles.x + Input.GetAxis("Mouse Y") * sensitivity.x ,0);
     }
 }
